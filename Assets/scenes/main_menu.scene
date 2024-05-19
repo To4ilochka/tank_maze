@@ -1,0 +1,114 @@
+{
+  "__guid": "4f56bb6d-613c-4b87-a56e-5f1dbacc9033",
+  "GameObjects": [
+    {
+      "__guid": "d43867d5-29db-41c0-91b3-f1709e7e73f1",
+      "Flags": 0,
+      "Name": "Scene",
+      "Position": "-520.1555,-130.2307,138.0698",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Children": [
+        {
+          "__guid": "45b1ee24-8b5d-46e8-bd54-ffb10342850b",
+          "Flags": 0,
+          "Name": "MainMenu",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ScreenPanel",
+              "__guid": "d9f5137f-e136-47a1-8064-3d86fa91c74b",
+              "AutoScreenScale": true,
+              "Opacity": 1,
+              "Scale": 1,
+              "ZIndex": 100
+            },
+            {
+              "__type": "MainMenu",
+              "__guid": "860936a0-e72a-4602-8f15-d654ce35ae29"
+            }
+          ]
+        },
+        {
+          "__guid": "6a137d3a-2e8a-4b46-98dc-92c5eb628fdf",
+          "Flags": 0,
+          "Name": "Cube",
+          "Position": "398.988,-165.6316,46.72971",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "a921fc09-a46a-4dbf-bf99-eed17970ff70",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "7559ec5b-16da-43ce-a4a2-49823527666f",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "-311.4706,-174.5888,123.1511",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "89d9ccf8-66b7-4ca8-ba3e-2b98b725333d",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": true,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "NetworkInterpolation": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "minimal",
+  "Description": "",
+  "LastSaved": "2024-05-19T14:00:26.9309618\u002B02:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

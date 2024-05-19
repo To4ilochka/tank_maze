@@ -1,0 +1,28 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root class="MainMenu">
+    <div class="title">Tank maze</div>
+    <div class="options">
+        <div class="buttons">
+            Play
+        </div>
+        <div class="buttons sfx">
+            Exit
+        </div>
+    </div>
+</root>
+
+@code
+{
+    void OnExit() 
+    {
+        Log.Info("Exit");
+    }
+
+	void OnStart() 
+	{
+		Log.Info("Start");
+	}
+}

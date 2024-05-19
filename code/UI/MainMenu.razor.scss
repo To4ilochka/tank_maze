@@ -1,0 +1,56 @@
+MainMenu 
+	{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(black, 0.1);
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	pointer-events: all;
+
+
+	.title 
+	{
+		bottom: 40;
+		font-size: 175px;
+		font-family: Poppins;
+		color: #fff;
+		text-stroke: 8px black;
+		color: white;
+		bottom: 300;
+	}
+
+	.buttons 
+	{
+		bottom: 100;
+		font-size: 100px;
+		font-family: Poppins;
+		color: #fff;
+		text-stroke: 8px black;
+		color: white;
+
+	}
+	.options
+	{
+		flex-direction: column;
+		align-items: center;
+		right: 800;
+		top: 100;
+
+
+		> .button
+		{
+			&.sfx
+			{
+				&:active
+				{
+					sound-in: 
+				}
+
+			}
+		}
+	}
+}
