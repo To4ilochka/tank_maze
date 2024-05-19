@@ -55,7 +55,7 @@ public sealed class Maze : Component
 	private void FillMaze( int cellCountHeight, int cellCountWidth )
 	{
 		int cellI = 1;
-		var topLeftCorner = new Vector3( cellCountHeight * 50, cellCountWidth * 50, 0 );
+		var topLeftCorner = new Vector3( cellCountHeight * 50, cellCountWidth * 50, WallHeight * 25 );
 		maze = new Cell[cellCountHeight][];
 		maze[0] = new Cell[cellCountWidth];
 
