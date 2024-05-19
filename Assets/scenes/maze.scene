@@ -1,0 +1,104 @@
+{
+  "__guid": "9f832399-4887-46b0-8f21-2ee284f538e2",
+  "GameObjects": [
+    {
+      "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
+      "Flags": 0,
+      "Name": "Sun",
+      "Position": "-0.0001373971,0.000000000005734269,1000",
+      "Rotation": "0,0.7071068,0,0.7071068",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "1a7481fe-9a2a-4768-a39c-dc172e7d9f02",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.94419,0.97767,1,1",
+          "Shadows": true,
+          "SkyColor": "0.25098,0.31765,0.35294,1"
+        }
+      ]
+    },
+    {
+      "__guid": "22bef162-1d7e-4af1-8b96-84f15e77aa54",
+      "Flags": 0,
+      "Name": "Maze",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Maze",
+          "__guid": "8340e22b-c97b-49d6-9f7d-87891ea37e7e",
+          "CameraComponent": {
+            "_type": "component",
+            "component_id": "7d9d65aa-2432-456f-9b66-0883f56ddd50",
+            "go": "b512ceeb-d0bc-4947-aefd-613d0a845055",
+            "component_type": "CameraComponent"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "b512ceeb-d0bc-4947-aefd-613d0a845055",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "-0.0001109543,0,1000",
+      "Rotation": "0,0.7071068,0,0.7071068",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "7d9d65aa-2432-456f-9b66-0883f56ddd50",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 53.08,
+          "IsMainCamera": true,
+          "Orthographic": true,
+          "OrthographicHeight": 1000,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "NetworkInterpolation": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "minimal",
+  "Description": "",
+  "LastSaved": "2024-05-13T00:11:19.7710289\u002B03:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
