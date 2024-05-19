@@ -66,7 +66,7 @@
           "FieldOfView": 53.08,
           "IsMainCamera": true,
           "Orthographic": true,
-          "OrthographicHeight": 1000,
+          "OrthographicHeight": 600,
           "Priority": 1,
           "RenderExcludeTags": "",
           "RenderTags": "",
@@ -101,7 +101,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-05-19T14:50:16.1919803\u002B03:00",
+  "LastSaved": "2024-05-19T20:00:15.5036499\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
