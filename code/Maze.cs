@@ -15,6 +15,7 @@ public sealed class Maze : Component
 	{
 		int cellCountHeight = rnd.Int( 4, 5 ), cellCountWidth = rnd.Int( 6, 8 );
 		CreateMaze( cellCountHeight, cellCountWidth );
+		CameraComponent.OrthographicHeight = cellCountHeight * 100 + 200;
 	}
 
 	protected override void OnUpdate()
