@@ -19,10 +19,42 @@ public sealed class Maze : Component
 
 	protected override void OnUpdate()
 	{
-
+		
 	}
 
-	private void CreateMaze( int cellCountHeight, int cellCountWidth )
+	public Vector3[] CreateSpawns( int count, int cellCountHeight, int cellCountWidth, int minDistance )
+	{
+		Vector3[] spawns = new Vector3[count];
+		List<Cell> cells = new();
+
+		foreach ( var array in maze )
+		{
+			foreach ( var cell in array )	
+			{
+				cells.Add( cell );
+			}
+		}
+
+		for ( int c = 0; c < count; c++ )
+		{
+			Cell cell = rnd.FromList( cells );
+			spawns[c] = cell.Transform.LocalPosition + new Vector3( CellSide * 25, CellSide * 25 );
+
+			if ( c == count - 1 ) return spawns;
+
+			for ( int i = Math.Max( 0, cell.Y - minDistance ); i <= Math.Min( cellCountHeight - 1, cell.Y + minDistance ); i++ )
+			{
+				for ( int j = Math.Max( 0, cell.X - minDistance ); j <= Math.Min( cellCountWidth - 1, cell.X + minDistance ); j++ )
+				{
+					cells.Remove( maze[i][j] );
+				}
+			}
+		}
+
+		return spawns;
+	}
+
+	public void CreateMaze( int cellCountHeight, int cellCountWidth )
 	{
 		float foundationHeight = cellCountHeight * CellSide, foundationWidth = cellCountWidth * CellSide;
 
@@ -62,7 +94,7 @@ public sealed class Maze : Component
 		//	Init first column
 		for ( int j = 0; j < cellCountWidth; j++ )
 		{
-			maze[0][j] = new( cellI++, $"Cell({1},{j + 1})", topLeftCorner + new Vector3( CellSide * -50, (j + 1) * CellSide * -50, 0 ) )
+			maze[0][j] = new( j, 0, cellI++, $"Cell({0};{j})", topLeftCorner + new Vector3( CellSide * -50, (j + 1) * CellSide * -50 ) )
 			{
 				Parent = GameObject
 			};
@@ -76,7 +108,7 @@ public sealed class Maze : Component
 
 				for ( int j = 0; j < cellCountWidth; j++ )
 				{
-					maze[i][j] = new( maze[i - 1][j].Value, $"Cell({i + 1},{j + 1})", topLeftCorner + new Vector3( (i + 1) * CellSide * -50, (j + 1) * CellSide * -50, 0 ) )
+					maze[i][j] = new( j, i, maze[i - 1][j].Value, $"Cell({i};{j})", topLeftCorner + new Vector3( (i + 1) * CellSide * -50, (j + 1) * CellSide * -50 ) )
 					{
 						Parent = GameObject
 					};
@@ -99,7 +131,7 @@ public sealed class Maze : Component
 				{
 					if ( rnd.Int( 0, 1 ) == 1 )
 					{
-						maze[i][j].RightWall = CreateWall( maze[i][j], new Vector3( CellSide * 25, 0, 0 ), false );
+						maze[i][j].RightWall = CreateWall( maze[i][j], new Vector3( CellSide * 25, 0 ), false );
 					}
 					else
 					{
@@ -109,7 +141,7 @@ public sealed class Maze : Component
 			}
 			else
 			{
-				maze[i][j].RightWall = CreateWall( maze[i][j], new Vector3( CellSide * 25, 0, 0 ), false );
+				maze[i][j].RightWall = CreateWall( maze[i][j], new Vector3( CellSide * 25, 0 ), false );
 			}
 		}
 	}
@@ -129,7 +161,7 @@ public sealed class Maze : Component
 					}
 					if ( cellsWithoutDown.Count >= 2 )
 					{
-						maze[i][j].DownWall = CreateWall( maze[i][j], new Vector3( 0, CellSide * 25, 0 ), true );
+						maze[i][j].DownWall = CreateWall( maze[i][j], new Vector3( 0, CellSide * 25 ), true );
 					}
 				}
 			}
@@ -221,19 +253,16 @@ public sealed class Maze : Component
 
 	private class Cell : GameObject
 	{
+		public int X { get; set; }
+		public int Y { get; set; }
 		public int Value { get; set; } = 0;
 		public GameObject RightWall { get; set; }
 		public GameObject DownWall { get; set; }
 
-
-		public Cell( int value, Vector3 localPosition ) : base( true, "Cell" )
+		public Cell( int x, int y, int value, string name, Vector3 localPosition ) : base( true, name )
 		{
-			Value = value;
-			Transform.LocalPosition = localPosition;
-		}
-
-		public Cell( int value, string name, Vector3 localPosition ) : base( true, name )
-		{
+			X = x;
+			Y = y;
 			Value = value;
 			Transform.LocalPosition = localPosition;
 		}
