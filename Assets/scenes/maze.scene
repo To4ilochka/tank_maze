@@ -76,6 +76,15 @@
           "ZNear": 10
         }
       ]
+    },
+    {
+      "__guid": "609f8be3-673c-4913-a245-560b38156914",
+      "Flags": 0,
+      "Name": "Object",
+      "Position": "31.48022,-170.6539,795.4362",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true
     }
   ],
   "SceneProperties": {
@@ -101,8 +110,8 @@
   },
   "Title": "maze",
   "Description": "",
-  "LastSaved": "2024-05-19T22:01:33.6502683\u002B03:00",
+  "LastSaved": "2024-05-23T19:01:15.6746205\u002B03:00",
   "ResourceVersion": 1,
-  "__version": 1,
-  "__references": []
+  "__references": [],
+  "__version": 1
 }
