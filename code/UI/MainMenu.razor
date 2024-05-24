@@ -5,10 +5,10 @@
 <root class="MainMenu">
     <div class="title">Tank maze</div>
     <div class="options">
-        <div class="buttons">
+        <div class="button start" onclick=@OnStart>
             Play
         </div>
-        <div class="buttons sfx">
+        <div class="button exit" onclick=@OnExit>
             Exit
         </div>
     </div>
@@ -16,13 +16,16 @@
 
 @code
 {
-    void OnExit() 
+    [Property] public SceneFile PlayScene { get; set; }
+
+    void OnExit()
     {
-        Log.Info("Exit");
+        Game.Close();
     }
 
-	void OnStart() 
-	{
-		Log.Info("Start");
-	}
+    void OnStart() 
+    {
+        Scene.Load(PlayScene);
+        Log.Info("Start");
+    }
 }
